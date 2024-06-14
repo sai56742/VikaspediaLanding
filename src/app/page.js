@@ -18,14 +18,14 @@ export default function Home() {
         });
     }
 
-var deferredPrompt;
+// var deferredPrompt;
 
-window.addEventListener('beforeinstallprompt', function(event) {
-  console.log('beforeinstallprompt fired');
-  event.preventDefault();
-  deferredPrompt = event;
-  return false;
-});
+// window.addEventListener('beforeinstallprompt', function(event) {
+//   console.log('beforeinstallprompt fired');
+//   event.preventDefault();
+//   deferredPrompt = event;
+//   return false;
+// });
   }, []);
 
 
