@@ -14,15 +14,38 @@ this.addEventListener("install", (event) => {
         .open(cacheData)
         .then((cache) =>
           cache.addAll([
-            // "/",
+            "/",
+            "/_next/static/chunks/app/page.js",
+            "/_next/static/chunks/app/layout.js",
+            "/_next/static/css/app/layout.css",
+            "/_next/static/css/app/page.css",
+            // "/page.js",
+            // "/layout.js",
+            // "/font.js",
+            // "/page.module.css",
+            // "/theme.js",
             "/appstore/playstore/200x75.png",
             "/appstore/vikaspedialogos/screenshot-512x512.png",
+            // "/socialmedia2/fb/25*25.png",
+            // "/socialmedia2/fb/35*35.png",
+            // "/socialmedia2/fb/40*40.png",
+            // "/socialmedia2/fb/50*50.png",
+            // "/socialmedia2/fb/75*75.png",
             "/appstore/vikaspedialogos/LandingPageBg.jpeg",
-            "/favicon.ico",
             "/appstore/vikaspedialogos/newLogo.png",
-            "./officialslogo/cdac/75x75.png",
-            "./officialslogo/digitalindia/200x70.png",
-            "./officialslogo/meity/200x75.png"
+            "/appstore/vikaspedialogos/vikaspediaLogo.png",
+            "/officialslogo/cdac/75x75.png",
+            "/officialslogo/digitalindia/200x70.png",
+            "/officialslogo/meity/200x75.png",
+
+           
+           
+            // "/page.js",
+        
+           
+            // "/favicon.ico",
+            // "/appstore/vikaspedialogos/newLogo.png",
+            
 
             
           ]),
