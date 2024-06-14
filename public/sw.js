@@ -33,13 +33,13 @@ this.addEventListener("install", (event) => {
 
 
 
-    // this.addEventListener("fetch", (event)=>{
-    //     event.respondWith(caches.match(event.request).then((res)=>{
-    //         if(res){
-    //             return res
-    //         }
-    //     }))
-    // })
+    this.addEventListener("fetch", (event)=>{
+        event.respondWith(caches.match(event.request).then((res)=>{
+            if(res){
+                return res
+            }
+        }))
+    })
 
 // self.addEventListener('install', function(event){
 //     console.log('installing sevice woker install',event);
