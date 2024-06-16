@@ -11,20 +11,17 @@
     {
       "src": "https://static.vikaspedia.in/media/pwa/logo192.png",
       "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any"
+      "sizes": "192x192"
     },
     {
       "src": "https://static.vikaspedia.in/media/pwa/logo512.png",
       "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any"
+      "sizes": "512x512"
     },
     {
       "src": "https://static.vikaspedia.in/media/pwa/logo144.png",
       "type": "image/png",
-      "sizes": "144x144",
-      "purpose": "any"
+      "sizes": "144x144"
     }
   ],
   "start_url": "./",
@@ -49,16 +46,8 @@
       "form_factor": "narrow",
       "label": "Vikaspedia is a nationwide multilingual knowledge-sharing platform that provides digital resources for societal development."
     }
-  ],
-  "related_applications": [
-    {
-      "platform": "play",
-      "url": "https://play.google.com/store/apps/details?id=com.cdac.vikaspediabrowserstudio",
-      "id": "com.cdac.vikaspediabrowserstudio"
-    }
-   
-  ],
-  "prefer_related_applications": true
+  ]
+ 
   
   
   
