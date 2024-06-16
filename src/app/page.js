@@ -25,6 +25,8 @@ window.addEventListener('beforeinstallprompt', function(event) {
   // event.preventDefault();
   // deferredPrompt = event;
   // return false;
+
+  event.prompt()
   
 });
   }, []);
