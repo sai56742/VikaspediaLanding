@@ -1,6 +1,8 @@
+
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "./theme";
+
 
 export const metadata = {
   title: "Vikaspedia : Landing Page",
@@ -8,6 +10,15 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
+
+
+  
+
+
+
+
+
   return (
     <html lang="en">
       <head>
@@ -25,6 +36,9 @@ export default function RootLayout({ children }) {
         <meta name="description" content="vikaspedia landing page" />
         <title>Vikaspedia : Landing Page</title>
         <link rel="manifest" href="/manifest.json" />
+
+      
+
         <link
           href="https://static.vikaspedia.in/media/pwa/favicon.ico"
           type="image/x-icon"

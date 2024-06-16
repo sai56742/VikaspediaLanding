@@ -6,32 +6,24 @@ import Box from "@mui/material/Box";
 
 export default function Home() {
 
+
   useEffect(() => {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker
         .register('/sw.js')
-        .then((registration) => {
-          console.log('Service worker registered:', registration.scope);
+        .then(() => {
+          console.log('Service Worker registered successfully');
         })
-        .catch((err) => {
-          console.warn('Service worker registration failed:', err);
+        .catch((error) => {
+          console.error('Service Worker registration failed:', error);
         });
     }
 
-var deferredPrompt;
-
-window.addEventListener('beforeinstallprompt', function(event) {
-  console.log('beforeinstallprompt fired');
-  // event.preventDefault();
-  // deferredPrompt = event;
-  // return false;
-
-  event.prompt()
-  
-});
+    
   }, []);
 
 
+ 
   return (
     <Box>
       <OldLandingPage />
