@@ -5,30 +5,26 @@
     {
       "src": "https://static.vikaspedia.in/media/pwa/favicon.ico",
       "type": "image/x-icon",
-      "sizes": "64x64",
-      "purpose": "any"
+      "sizes": "64x64"
     },
     {
       "src": "https://static.vikaspedia.in/media/pwa/logo192.png",
       "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any"
+      "sizes": "192x192"
     },
     {
       "src": "https://static.vikaspedia.in/media/pwa/logo512.png",
       "type": "image/png",
-      "sizes": "512x512",
-      "purpose": "any"
+      "sizes": "512x512"
     },
     {
       "src": "https://static.vikaspedia.in/media/pwa/logo144.png",
       "type": "image/png",
-      "sizes": "144x144",
-      "purpose": "any"
+      "sizes": "144x144"
     }
   ],
   "start_url": "./",
-  "scope": ".",
+  "scope": "/",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff",
@@ -58,7 +54,7 @@
     }
    
   ],
-  "prefer_related_applications": true
+  "prefer_related_applications": false
   
   
   
