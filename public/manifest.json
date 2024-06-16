@@ -1,11 +1,12 @@
 {
+
   "short_name": "Vikaspedia",
   "name": "Vikaspedia",
   "icons": [
     {
       "src": "https://static.vikaspedia.in/media/pwa/favicon.ico",
-      "type": "image/x-icon",
-      "sizes": "64x64"
+      "sizes": "64x64",
+      "type": "image/x-icon"
     },
     {
       "src": "https://static.vikaspedia.in/media/pwa/logo192.png",
@@ -23,41 +24,28 @@
       "sizes": "144x144"
     }
   ],
-  "start_url": "./",
-  "scope": "/",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff",
-  "orientation": "portrait",
-  "description": "Vikaspedia is a nationwide multilingual knowledge-sharing platform that provides digital resources for societal development.",
   "screenshots": [
     {
-      "src": "/appstore/vikaspedialogos/screenshot-512x512.png",
-      "sizes": "512x512",
+      "src": "/vikaspedia.png",
       "type": "image/png",
-      "form_factor": "wide",
-      "label": "Vikaspedia is a nationwide multilingual knowledge-sharing platform that provides digital resources for societal development."
+      "sizes": "540x720",
+      "form_factor": "narrow"
     },
     {
-      "src": "/appstore/vikaspedialogos/screenshot-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "form_factor": "narrow",
-      "label": "Vikaspedia is a nationwide multilingual knowledge-sharing platform that provides digital resources for societal development."
+     "src": "https://vikaspedia.in/appstore/vikaspedialogos/newLogo.png",
+      "sizes": "867x679",
+      "type": "image/gif",
+      "form_factor": "wide",
+      "label": "Wonder Widgets"
     }
-  ],
-  "related_applications": [
-    {
-      "platform": "play",
-      "url": "https://play.google.com/store/apps/details?id=com.cdac.vikaspediabrowserstudio",
-      "id": "com.cdac.vikaspediabrowserstudio"
-    }
-   
-  ],
-  "prefer_related_applications": false
-  
-  
-  
-
-
+],
+  "start_url": "/index.html",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff",
+  "theme_color": "#3f51b5",
+  "description": "A simple Instagram Clone, implementing a lot of PWA love.",
+  "dir": "ltr",
+  "lang": "en-US"
 }
