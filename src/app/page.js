@@ -1,33 +1,35 @@
 'use client'
-import { useEffect } from "react";
-import OldLandingPage from "@/container/OldLandingPage";
-import Box from "@mui/material/Box";
+
+// App.js or any main component
+import React, { useEffect } from 'react';
+import InstallPrompt from './installPrompt';
+import OldLandingPage from '@/container/OldLandingPage'; // Adjust the path as per your project structure
+
+export default function App() {
 
 
-export default function Home() {
+  let deferredPrompt = null;
 
-
-  
   useEffect(() => {
     const registerServiceWorker = async () => {
       if ('serviceWorker' in navigator) {
         try {
           const registration = await navigator.serviceWorker.register('/sw.js');
           console.log('Service Worker registered successfully');
-
-          // Initialize deferredPrompt for later use to show browser install prompt
-          let deferredPrompt;
-
-          // Add an event listener for 'beforeinstallprompt' event
+         
+          // Add event listener for 'beforeinstallprompt' event
           window.addEventListener('beforeinstallprompt', (e) => {
-            // Prevent the mini-infobar from appearing
+            console.log('beforeinstallprompt event fired');
+           
+
+            // Prevent the default browser prompt
             e.preventDefault();
+
             // Stash the event so it can be triggered later
             deferredPrompt = e;
-            // Show the install prompt to the user
-            deferredPrompt.prompt();
-            // Optionally, send analytics event that PWA install promo was shown
-            console.log(`'beforeinstallprompt' event was fired.`);
+
+            // Show the install prompt immediately
+            showInstallPrompt();
           });
         } catch (error) {
           console.error('Service Worker registration failed:', error);
@@ -36,12 +38,40 @@ export default function Home() {
     };
 
     registerServiceWorker();
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('beforeinstallprompt', () => {});
+    };
   }, []);
 
- 
+  const showInstallPrompt = () => {
+    if (deferredPrompt) {
+
+      alert("install")
+      // Show the browser's native install prompt
+      deferredPrompt.prompt();
+
+      // Wait for the user's response
+      deferredPrompt.userChoice.then((choiceResult) => {
+        if (choiceResult.outcome === 'accepted') {
+          console.log('User accepted the install prompt');
+        } else {
+          console.log('User dismissed the install prompt');
+        }
+
+        // Reset deferredPrompt
+        deferredPrompt = null;
+      });
+    }
+  };
+
+
+
   return (
-    <Box>
+    <>
+      {/* <InstallPrompt /> */}
       <OldLandingPage />
-    </Box>
+    </>
   );
 }
