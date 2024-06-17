@@ -1,4 +1,5 @@
 const CACHE_NAME = "static";
+const CACHE_DYNAMIC = "dynamic";
 const STATIC_CACHE_URLS = [
   "/",
   "/_next/static/chunks/app/layout.js",
@@ -32,17 +33,21 @@ self.addEventListener("activate", function (event) {
   return self.clients.claim();
 });
 
-self.addEventListener("fetch", (event) => {
-  // Cache-First Strategy
+self.addEventListener("fetch", function (event) {
   event.respondWith(
-    caches
-      .match(event.request) // check if the request has already been cached
-      .then(
-        (cached) =>
-          // console.log("cached files ===>")
-
-          cached || fetch(event.request)
-      )
-      .catch()
+    caches.match(event.request).then(function (response) {
+      if (response) {
+        return response;
+      } else {
+        return fetch(event.request)
+          .then(function (res) {
+            return caches.open(CACHE_DYNAMIC).then(function (cache) {
+              cache.put(event.request.url, res.clone());
+              return res;
+            });
+          })
+          .catch(function (err) {});
+      }
+    })
   );
 });
