@@ -8,63 +8,63 @@ import OldLandingPage from '@/container/OldLandingPage'; // Adjust the path as p
 export default function App() {
 
 
-  let deferredPrompt = null;
+  // let deferredPrompt = null;
 
-  useEffect(() => {
-    const registerServiceWorker = async () => {
-      if ('serviceWorker' in navigator) {
-        try {
-          const registration = await navigator.serviceWorker.register('/sw.js');
-          console.log('Service Worker registered successfully');
+  // useEffect(() => {
+  //   const registerServiceWorker = async () => {
+  //     if ('serviceWorker' in navigator) {
+  //       try {
+  //         const registration = await navigator.serviceWorker.register('/sw.js');
+  //         console.log('Service Worker registered successfully');
          
-          // Add event listener for 'beforeinstallprompt' event
-          window.addEventListener('beforeinstallprompt', (e) => {
-            console.log('beforeinstallprompt event fired');
+  //         // Add event listener for 'beforeinstallprompt' event
+  //         window.addEventListener('beforeinstallprompt', (e) => {
+  //           console.log('beforeinstallprompt event fired');
            
 
-            // Prevent the default browser prompt
-            e.preventDefault();
+  //           // Prevent the default browser prompt
+  //           e.preventDefault();
 
-            // Stash the event so it can be triggered later
-            deferredPrompt = e;
+  //           // Stash the event so it can be triggered later
+  //           deferredPrompt = e;
 
-            // Show the install prompt immediately
-            showInstallPrompt();
-          });
-        } catch (error) {
-          console.error('Service Worker registration failed:', error);
-        }
-      }
-    };
+  //           // Show the install prompt immediately
+  //           showInstallPrompt();
+  //         });
+  //       } catch (error) {
+  //         console.error('Service Worker registration failed:', error);
+  //       }
+  //     }
+  //   };
 
-    registerServiceWorker();
+  //   registerServiceWorker();
 
-    // Clean up event listener on component unmount
-    return () => {
-      window.removeEventListener('beforeinstallprompt', () => {});
-    };
-  }, []);
+  //   // Clean up event listener on component unmount
+  //   return () => {
+  //     window.removeEventListener('beforeinstallprompt', () => {});
+  //   };
+  // }, []);
 
-  const showInstallPrompt = () => {
-    if (deferredPrompt) {
+  // const showInstallPrompt = () => {
+  //   if (deferredPrompt) {
 
-      alert("install")
-      // Show the browser's native install prompt
-      deferredPrompt.prompt();
+  //     alert("install")
+  //     // Show the browser's native install prompt
+  //     deferredPrompt.prompt();
 
-      // Wait for the user's response
-      deferredPrompt.userChoice.then((choiceResult) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('User accepted the install prompt');
-        } else {
-          console.log('User dismissed the install prompt');
-        }
+  //     // Wait for the user's response
+  //     deferredPrompt.userChoice.then((choiceResult) => {
+  //       if (choiceResult.outcome === 'accepted') {
+  //         console.log('User accepted the install prompt');
+  //       } else {
+  //         console.log('User dismissed the install prompt');
+  //       }
 
-        // Reset deferredPrompt
-        deferredPrompt = null;
-      });
-    }
-  };
+  //       // Reset deferredPrompt
+  //       deferredPrompt = null;
+  //     });
+  //   }
+  // };
 
 
 
