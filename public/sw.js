@@ -1,4 +1,4 @@
-const CACHE_NAME = "static";
+const CACHE_STATIC = "static";
 const CACHE_DYNAMIC = "dynamic";
 // const STATIC_CACHE_URLS = [
 //   "/",
@@ -25,7 +25,7 @@ const CACHE_DYNAMIC = "dynamic";
 self.addEventListener("install", function (event) {
   console.log("[Service Worker] Installing Service Worker ...", event);
   event.waitUntil(
-    caches.open(CACHE_STATIC_NAME).then(function (cache) {
+    caches.open(CACHE_STATIC).then(function (cache) {
       console.log("[Service Worker] Precaching App Shell");
       cache.addAll([
         "/",
