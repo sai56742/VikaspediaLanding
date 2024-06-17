@@ -1,12 +1,21 @@
-'use client'
+"use client";
 
 // App.js or any main component
-import React, { useEffect } from 'react';
-import InstallPrompt from './installPrompt';
-import OldLandingPage from '@/container/OldLandingPage'; // Adjust the path as per your project structure
+import React, { useEffect } from "react";
+import InstallPrompt from "./installPrompt";
+import OldLandingPage from "@/container/OldLandingPage"; // Adjust the path as per your project structure
 
 export default function App() {
+  useEffect(() => {
+    const registerServiceWorker = async () => {
+      if ("serviceWorker" in navigator) {
+        const registration = await navigator.serviceWorker.register("/sw.js");
+        console.log("Service Worker registered successfully");
+      }
+    };
 
+    registerServiceWorker();
+  }, []);
 
   // let deferredPrompt = null;
 
@@ -16,11 +25,10 @@ export default function App() {
   //       try {
   //         const registration = await navigator.serviceWorker.register('/sw.js');
   //         console.log('Service Worker registered successfully');
-         
+
   //         // Add event listener for 'beforeinstallprompt' event
   //         window.addEventListener('beforeinstallprompt', (e) => {
   //           console.log('beforeinstallprompt event fired');
-           
 
   //           // Prevent the default browser prompt
   //           e.preventDefault();
@@ -65,8 +73,6 @@ export default function App() {
   //     });
   //   }
   // };
-
-
 
   return (
     <>

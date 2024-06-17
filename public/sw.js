@@ -2,10 +2,10 @@ const CACHE_NAME = "static";
 const CACHE_DYNAMIC = "dynamic";
 const STATIC_CACHE_URLS = [
   "/",
-  "/src/container/OldLandingPage/index.js",
-  "/src/container/OldLandingPage/Header.js",
-  "/src/components/FooterGeneral.js",
-  "/src/components/SelectDropdown/index.js",
+  // "/container/OldLandingPage/index.js",
+  // "/src/container/OldLandingPage/Header.js",
+  // "/src/components/FooterGeneral.js",
+  // "/src/components/SelectDropdown/index.js",
 
   "/_next/static/chunks/app/layout.js",
   "/_next/static/chunks/app/page.js",
