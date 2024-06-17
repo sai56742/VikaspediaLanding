@@ -1,35 +1,13 @@
 const CACHE_STATIC = "static";
 const CACHE_DYNAMIC = "dynamic";
-// const STATIC_CACHE_URLS = [
-//   "/",
-
-//   "/_next/static/chunks/app/layout.js",
-//   "/_next/static/chunks/app/page.js",
-//   "/_next/static/css/app/page.css",
-//   "/_next/static/css/app/layout.css",
-//   "/_next/static/chunks/webpack.js",
-//   "/_next/static/chunks/app-pages-internals.js",
-//   "/appstore/vikaspedialogos/newLogo.png",
-//   "/appstore/vikaspedialogos/vikaspediaLogo.png",
-//   "/appstore/appstore/200x75.png",
-//   "/appstore/playstore/200x75.png",
-//   "/appstore/vikaspedialogos/LandingPageBg.jpeg",
-//   "/officialslogo/cdac/75x75.png",
-//   "/officialslogo/digitalindia/200x70.png",
-
-//   "/officialslogo/meity/200x75.png",
-//   "https://static.vikaspedia.in/media/pwa/logo144.png",
-//   "https://vikaspedia.in/appstore/vikaspedialogos/newLogo.png",
-// ];
 
 self.addEventListener("install", function (event) {
-  console.log("[Service Worker] Installing Service Worker ...", event);
+  
   event.waitUntil(
     caches.open(CACHE_STATIC).then(function (cache) {
       console.log("[Service Worker] Precaching App Shell");
       cache.addAll([
         "/",
-
         "/_next/static/chunks/app/layout.js",
         "/_next/static/chunks/app/page.js",
         "/_next/static/css/app/page.css",
@@ -43,7 +21,6 @@ self.addEventListener("install", function (event) {
         "/appstore/vikaspedialogos/LandingPageBg.jpeg",
         "/officialslogo/cdac/75x75.png",
         "/officialslogo/digitalindia/200x70.png",
-
         "/officialslogo/meity/200x75.png",
         "https://static.vikaspedia.in/media/pwa/logo144.png",
         "https://vikaspedia.in/appstore/vikaspedialogos/newLogo.png",
