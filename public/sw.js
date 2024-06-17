@@ -7,11 +7,11 @@ self.addEventListener("install", function (event) {
       console.log("[Service Worker] Precaching App Shell");
       cache.addAll([
         "/",
-        "/_next/static/chunks/app/layout.js",
-        "/_next/static/chunks/app/page.js",
-        "/_next/static/css/app/page.css",
-        "/_next/static/css/app/layout.css",
-        "/_next/static/chunks/app-pages-internals.js",
+        // "/_next/static/chunks/app/layout.js",
+        // "/_next/static/chunks/app/page.js",
+        // "/_next/static/css/app/page.css",
+        // "/_next/static/css/app/layout.css",
+        // "/_next/static/chunks/app-pages-internals.js",
         "/appstore/vikaspedialogos/newLogo.png",
         "/appstore/vikaspedialogos/vikaspediaLogo.png",
         "/appstore/appstore/200x75.png",
@@ -37,7 +37,10 @@ self.addEventListener("fetch", (event) => {
   event.respondWith(
     caches
       .match(event.request) // check if the request has already been cached
-      .then((cached) => cached || fetch(event.request)) // otherwise request network
+      .then(
+        (cached) => cached
+        //  || fetch(event.request)
+      ) // otherwise request network
     // .then(
     //   (response) =>
     //     cache(event.request, response) // put response in cache
