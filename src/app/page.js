@@ -24,7 +24,7 @@ export default function App() {
 
         window.addEventListener("appinstalled", (event) => {
           // alert("app insatlled");
-          // generatePayload()
+          generatePayload()
 
 
           console.log("app installed");
