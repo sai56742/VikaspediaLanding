@@ -27,7 +27,7 @@ export default function App() {
           generatePayload()
 
 
-          console.log("app installed");
+          console.log("app installed",registration);
         });
       }
     };
