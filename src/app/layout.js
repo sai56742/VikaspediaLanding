@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
         />
         <meta name="description" content="vikaspedia landing page" />
         <title>Vikaspedia : Landing Page</title>
-        <link rel="manifest" href="/manifest.json" />
+        <link rel="manifest" href="./manifest.json" />
 
       
 
